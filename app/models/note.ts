@@ -14,6 +14,9 @@ export default class Note extends BaseModel {
   @column()
   declare is_favorite: boolean
 
+  @column()
+  declare color?: string
+
   @column.dateTime({ autoCreate: true })
   declare createdAt: DateTime
 
