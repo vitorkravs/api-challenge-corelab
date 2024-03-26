@@ -20,7 +20,7 @@ export default class NotesController {
    */
   async create({ request, response }: HttpContext) {
     try {
-      const data = request.only(['title', 'annotation', 'is_favorite, color'])
+      const data = request.only(['title', 'annotation', 'is_favorite'])
       if (!data.title) {
         return response.json({ message: 'Adicione um título' })
       }
