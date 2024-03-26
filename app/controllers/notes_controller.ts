@@ -20,7 +20,7 @@ export default class NotesController {
    */
   async create({ request, response }: HttpContext) {
     try {
-      const data = request.only(['title', 'annotation', 'is_favorite'])
+      const data = request.only(['title', 'annotation', 'is_favorite, color'])
       if (!data.title) {
         return response.json({ message: 'Adicione um título' })
       }
@@ -77,6 +77,27 @@ export default class NotesController {
       return response.json(note)
     } catch (error) {
       return response.status(500).json({ message: 'Erro ao alternar o favorito', error })
+    }
+  }
+
+  /**
+   * Handle form submission for the edit action
+   */
+  async toggleColor({ params, request, response }: HttpContext) {
+    try {
+      const note = await Note.find(params.id)
+
+      if (!note) {
+        return response.status(404).json({ message: 'Nota não encontrada' })
+      }
+
+      const data = request.only(['color'])
+      note.merge(data)
+      await note.save()
+
+      return response.json(note)
+    } catch (error) {
+      return response.status(500).json({ message: 'Erro ao atualizar a cor da nota' })
     }
   }
 
