@@ -82,8 +82,6 @@ O servidor estará rodando no endereço http://seu-ip:3333
 
 # Endpoints
 
-Descreva os endpoints disponíveis na API, por exemplo:
-
 `GET` /api/notes - Lista todos as Notas.
 
 `POST` /api/notes/post - Cadastra uma nova nota.
