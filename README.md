@@ -39,6 +39,7 @@ CREATE TABLE notes (
     title VARCHAR(255) NOT NULL,
     annotation TEXT NOT NULL,
     is_favorite boolean default false,
+    color varchar(255) default "#fff", 
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );
