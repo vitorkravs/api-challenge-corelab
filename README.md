@@ -51,7 +51,7 @@ CREATE TABLE notes (
 Clone o repositório para sua máquina local:
 
 ```bash
-git clone https://github.com/seu-usuario/seu-repositorio.git
+git clone https://github.com/vitorkravs/api-challenge-corelab.git
 
 cd seu-repositorio
 
