@@ -39,7 +39,7 @@ CREATE TABLE notes (
     title VARCHAR(255) NOT NULL,
     annotation TEXT NOT NULL,
     is_favorite boolean default false,
-    color varchar(255) default "#fff", 
+    color varchar(255) default "#fff",
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );
@@ -60,14 +60,39 @@ npm install
 
 # Configure as variáveis de ambiente:
 
-Crie um arquivo .env na raiz do projeto e preencha com as suas configurações de banco de dados MySQL, conforme o exemplo:
+Encontre o arquivo .env.example e copie as variaveis de ambiente contidadas nele, exemplo:
 
+```bash
+TZ=UTC
+PORT=3333
+HOST=localhost
+LOG_LEVEL=info
+APP_KEY=SuaAppKey
+NODE_ENV=development
+DB_HOST=127.0.0.1
+DB_PORT=Porta_do_seu_banco_de_dados
+DB_USER=root
+DB_PASSWORD=
+DB_DATABASE=
+
+```
+
+Em seguida crie um arquivo .env na raiz do projeto e preencha com as suas configurações de banco de dados MySQL, conforme o exemplo:
+
+```bash
+TZ=UTC
+PORT=3333
+HOST=localhost
+LOG_LEVEL=info
+APP_KEY=SuaAppKey
+NODE_ENV=development
 DB_CONNECTION=mysql
 DB_HOST=0.0.0.0
-DB_PORT=3333
+DB_PORT=Porta_do_seu_banco_de_dados
 DB_USER=seu_usuario
 DB_PASSWORD=sua_senha
 DB_DATABASE=nome_do_banco
+```
 
 # Executando a API
 
